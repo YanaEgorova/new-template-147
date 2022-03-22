@@ -1,0 +1,144 @@
+.prod {
+    padding: 3rem 0;
+    max-width:70rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.prod .title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.prod__img-box {
+    margin-bottom: 3rem;
+}
+.prod__img {
+    cursor: pointer;
+    margin-bottom: 2rem;
+    max-height: 35rem;
+    object-fit: contain;
+}
+.prod__img-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(240, 218, 197, .3); */
+    padding: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+}
+.prod__img-item:not(:last-child) {
+    margin-right: 2rem;
+}
+.prod__subimg {
+    cursor: pointer;
+    max-width: 10rem;
+    max-height: 25rem;
+}
+.prod__price-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.prod__price, .prod__discount {
+    font-size: 3rem;
+}
+
+.prod__discount {
+    color: var(--inactive);
+    margin-left: 2rem;
+    text-decoration: line-through;
+}
+.prod__text-box {
+    margin-bottom: 1rem;
+}
+.prod__btns-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    border-radius: 3rem;
+    /* background-color: var(--first-brand-color); */
+    border: .1rem solid var(--main-text-color);
+}
+.prod__btn {
+    width: 6rem;
+    height: 6rem;
+    padding: 2rem;
+}
+.prod__btn-less {
+    border-radius: 3rem 0 0 3rem;
+    border-right: .1rem solid var(--main-text-color);
+}
+.prod__btn-more {
+    border-radius: 0 3rem 3rem 0;
+    border-left: .1rem solid var(--main-text-color);
+}
+.prod__btn svg {
+    fill: var(--main-text-color);
+}
+.prod__amount-span {
+    font-size: 3rem;
+    width: 4rem;
+    text-align: center;
+}
+
+
+.prod__subtitle {
+    margin-bottom: 1rem;
+}
+.prod__text-block {
+    margin-bottom: 2rem;
+}
+.prod__size {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+ }
+ .prod__select {
+     display: block; 
+     font-size: 2rem;
+     width: 15rem;
+     outline: none;
+ }
+
+
+.add__btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+.prod__text {
+    margin-bottom: 2rem;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .prod {
+        max-width: 100%;
+        padding: 10rem 0;
+    }
+    .prod .title {
+        text-align: left;
+    }
+    .prod__price-box, .prod__btns-box {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .prod__block {
+        display: flex;
+    }
+    .prod__img-box {
+        margin-bottom: 0;
+        margin-right: 5rem;
+        width: calc(48% - 5rem);
+    }
+    .prod__block-right {
+        width: 52%;
+    }
+  
+}

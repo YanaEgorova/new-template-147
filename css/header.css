@@ -1,0 +1,120 @@
+.header__wrapper {
+    position: relative;
+    background-color: var(--first-brand-color);
+}
+.header {
+    padding: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__flex {
+    display: flex;
+    align-items: center;
+}
+.header__btn {
+    width: 6rem;
+    height: 5rem;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+.header__btn span {
+    width: 70%;
+    height: .2rem;
+    margin: 0 auto;
+    display: block;
+    background-color: var(--fourth-brand-color);
+    position: relative;
+}
+.header__btn span::before, .header__btn span::after {
+    width: 100%;
+    height: .2rem;
+    content: '';
+    display: block;
+    background-color: var(--fourth-brand-color);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+.header__btn span::before {
+    top: -.8rem;
+}
+.header__btn span::after {
+    bottom: -.8rem;
+}
+.nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: var(--main-bg-color);
+    width: 100%; 
+    height: 100%;
+    min-height: 100vh;
+    z-index: 9;
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 0.6s ease-in-out;
+}
+.nav__list {
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15rem 3rem;
+    opacity: 0;
+    transition-delay: .6s;
+    transition-duration: .4s;
+    transition-timing-function: ease;
+    transition-property: opacity;
+
+}
+.nav__item:not(:last-child) {
+    margin-bottom: 2rem;
+}
+.nav__link {
+    font-size: 1.6rem;
+    transition: all 0.3s ease-in-out;
+}
+.nav.open-menu {
+    left: 0;
+    visibility: visible;
+}
+.open-menu .nav__list {
+    opacity: 1;
+}
+
+.cart__btn {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.cart__btn svg {
+    width: 3rem;
+    display: block;
+    margin-right: 1rem;
+    fill: var(--fourth-brand-color);
+}
+.cart__btn .cart__span {
+    font-size: 2.2rem;
+    font-family: var(--title-font);
+}
+.nav__item-border {
+    display: none;
+}
+@media screen and (min-width: 1024px) {
+    .cart__btn:hover {
+        transform: scale(1.1);
+    }
+    .cart__btn {
+        display: flex;
+    }
+    .header__flex {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .nav__link:hover {
+        color: var(--third-brand-color);
+    }
+}
