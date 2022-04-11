@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: space-between;
 }
+body.open-menu {
+    overflow: hidden;
+}
 .header__flex {
     display: flex;
     align-items: center;

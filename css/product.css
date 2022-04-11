@@ -8,6 +8,16 @@
     text-align: center;
     margin-bottom: 2rem;
 }
+.disable-btn {
+    pointer-events: none;
+}
+.disable-btn svg {
+    opacity: 0.3;
+}
+.prod__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
 .prod__img-box {
     margin-bottom: 3rem;
 }
