@@ -4,6 +4,7 @@ export const products = [
         name: 'Sticker',
         price: 0.99,
         image: './img/img0.png',
+        type: 'ss', 
         description: [
             {
                 text: 'Motivational Sticker to get you throughout the day!',
@@ -21,6 +22,8 @@ export const products = [
         name: 'Product Title',
         price: 5.95,
         image: './img/img1.png',
+        type: 'trial', 
+        full_price: 198.98,
         description: [
             {
                 text: '',
@@ -47,6 +50,7 @@ export const products = [
         name: 'Product Title',
         price: 19.99,
         image: './img/img2.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -73,6 +77,7 @@ export const products = [
         name: 'Product Title',
         price: 24.99,
         image: './img/img3.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -100,6 +105,7 @@ export const products = [
         name: 'Product Title',
         price: 39.99,
         image: './img/img4.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -127,6 +133,7 @@ export const products = [
         name: 'Product Title',
         price: 49.95,
         image: './img/img5.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -154,6 +161,7 @@ export const products = [
         name: 'Product Title',
         price: 89.99,
         image: './img/img6.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -181,6 +189,7 @@ export const products = [
         name: 'Product Title',
         price: 106.58,
         image: './img/img7.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -207,6 +216,7 @@ export const products = [
         name: 'Product Title',
         price: 109.00,
         image: './img/img8.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -234,6 +244,7 @@ export const products = [
         name: 'Product Title',
         price: 115.89,
         image: './img/img9.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -261,6 +272,7 @@ export const products = [
         name: 'Product Title',
         price: 119.00,
         image: './img/img10.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -288,6 +300,7 @@ export const products = [
         name: 'Product Title',
         price: 122.00,
         image: './img/img11.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -315,6 +328,7 @@ export const products = [
         name: 'Product Title',
         price: 124.53,
         image: './img/img12.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
@@ -342,6 +356,7 @@ export const products = [
         name: 'Product Title',
         price: 129.87,
         image: './img/img13.png',
+        type: 'ss', 
         description: [
             {
                 text: '',
