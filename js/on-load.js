@@ -27,56 +27,9 @@ window.onload = function() {
          console.log('lessBtn', lessBtn)
       }
    }
-
-   if(document.querySelector('#checkbox2')){
-      checkTrial();
-   }
 };
 
-function checkTrial(){
-  let products = getLocalStorageItem();
-  let trial_exists = false;
-  let ss_exists = false;
 
-  products.forEach(product => {
-      if (product.type == "trial") {
-
-          trial_exists = true;
-          document.querySelector('#trial_terms').style.display = 'block';
-
-          let trial_names = document.querySelectorAll('.js_trial_name');
-          let trial_prices = document.querySelectorAll('.js_trial_price');
-          let full_prices = document.querySelectorAll('.js_full_price');
-
-          trial_names = [...trial_names];
-          trial_prices = [...trial_prices];
-          full_prices = [...full_prices];
-
-          trial_names.forEach(trial_name => {
-              trial_name.textContent = product.name;
-          });
-
-          trial_prices.forEach(trial_price => {
-              trial_price.textContent = product.price;
-          });
-
-          full_prices.forEach(full_price => {
-              full_price.textContent = product.full_price;
-          });
-      }else if (product.type == "ss") {
-        ss_exists = true;
-        document.querySelector('#ss_terms').style.display = 'block';
-      }
-  })
-
-  if(!trial_exists){
-    document.querySelector('#trial_terms').style.display = 'none';
-  }
-
-  if(!ss_exists){
-    document.querySelector('#ss_terms').style.display = 'none';
-  }
-}
 
 function shopPageFunctional() {
    hideEmptyMessage();
@@ -127,9 +80,7 @@ function removeItem(e) {
       showEmptyMessage();
   }
 
-  if(document.querySelector('#checkbox2')){
-      checkTrial();
-  }
+
 }
 
 function showEmptyMessage() {
