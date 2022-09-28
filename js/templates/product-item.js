@@ -19,9 +19,10 @@ export const item = (product) => {
       $${(product.price).toFixed(2)}
       </span>
       <div class="product__btn-block">
-      <a href="product-page.html?id=${product.id}" class="btn btn--first">details</a>
-  
-    <button class="btn js_add-to-cart">buy</button>
+      <a href="product-page.html?id=${product.id}" class="btn btn--first" style="margin: ${product.isItRing ? 'auto' : ''}">details</a>
+    ${
+      product.isItRing ? '' : '<button class="btn js_add-to-cart">buy</button>'
+    }
     </div>
       </div>
 

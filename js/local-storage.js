@@ -2,11 +2,35 @@ import { products } from './data/products.js';
 export const localStorage = (id, count) => {
     const actualProduct = products.find(product => product.id === id);
     let cart = window.localStorage.getItem('cart');
+    // DEV
+    var taskStatus
+    if(actualProduct.isItRing){
+        if(document.querySelector(".prod__select").value == "Select"){
+            document.querySelector(".prod__select").focus()
+            taskStatus = false
+            alert("Select a ring size")
+        } else {
+            taskStatus = true
+            actualProduct.ringSize = document.querySelector(".prod__select").value
+        }
+    }
+    if(taskStatus == false){
+        return taskStatus
+    }
+    /////
     if(cart) {
         cart = JSON.parse(cart);
-        const isFindProduct = cart.some(product => product.id === id);
+    // DEV
+        var isFindProduct
+        if(actualProduct.isItRing){
+            isFindProduct = cart.some(product => product.id === id && product.ringSize == actualProduct.ringSize);
+        } else {
+            isFindProduct = cart.some(product => product.id === id);
+        }
         if(isFindProduct) {
-            const updateCart = cart.map(product => product.id === id ? {...product,quantity : count ? Number(count) : product.quantity + 1} : product);
+            // const updateCart = [...cart, {...actualProduct, quantity : count ? Number(count) : 1}];
+            const updateCart = cart.map(product => product.id === id ? {...product, quantity : product.quantity + 1 } : product);
+    //////            
             window.localStorage.setItem('cart', JSON.stringify(updateCart));
             return;
         }
@@ -16,6 +40,7 @@ export const localStorage = (id, count) => {
     };
     const createCart = [{...actualProduct, quantity : count ? Number(count) : 1}];
     window.localStorage.setItem('cart', JSON.stringify(createCart));
+    return taskStatus
 }
 
 export const getLocalStorageItem = () => {
