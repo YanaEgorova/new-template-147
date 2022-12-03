@@ -6,6 +6,7 @@ export const WEBSITE_EMAIL = 'website email';
 export const WEBSITE_ADDRESS = 'website address';
 export const WEBSITE_RETURN_ADDRESS = 'website return address';
 export const WEBSITE_DESCRIPTOR = 'website desc';
+export const WEBSITE_FULFILLMENT = 'FULFILLMENT NINJAS HUB INC';
 
 let websiteName = document.querySelectorAll('.js_website-name');
 let websiteUrl = document.querySelectorAll('.js_website-url');
@@ -15,6 +16,7 @@ let websiteEmail = document.querySelectorAll('.js_website-email');
 let websiteAddress = document.querySelectorAll('.js_website-address');
 let websiteReturnAddress = document.querySelectorAll('.js_website-return-address');
 let websiteDescriptor = document.querySelectorAll('.js_website-desc');
+let websiteFulfillment = document.querySelectorAll('.js_website-fulfill');
 
 const mainPageTitle = document.querySelector('.js_main-title');
 const mainPageSubTitle = document.querySelector('.js_sub-title');
@@ -34,6 +36,7 @@ websiteCorp = [...websiteCorp];
 websitePhone = [...websitePhone];
 websiteAddress = [...websiteAddress];
 websiteDescriptor = [...websiteDescriptor];
+websiteFulfillment = [...websiteFulfillment];
 
 // SET WEBSITE TITLE
 document.title = WEBSITE_NAME;
@@ -73,6 +76,9 @@ if(!(websiteDescriptor.length === 0)) {
     setInformation(websiteDescriptor, WEBSITE_DESCRIPTOR);
 }
 
+if(!(websiteFulfillment.length === 0)){
+    setInformation(websiteFulfillment, WEBSITE_FULFILLMENT);
+} 
 
 function setInformation(array, info) {
     array.forEach(item => {
