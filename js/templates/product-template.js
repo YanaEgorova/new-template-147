@@ -3,6 +3,8 @@ import { description } from './product-description.js';
 import { dropdown } from './size-dropdown.js';
 
 export const productTemplate = (product, amount) => {
+    var clothingSizes = ["XS", "S", "M", "L", "XL"];
+  var ringSizes = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"];
    
     return `
    <div class="prod__block js_prod__block" id="${product.id}">
@@ -56,7 +58,8 @@ v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,
        <span class="prod__price js_prod__price">$ ${(product.price).toFixed(2)}</span>
        </div>
 
-       ${product.isItRing ? dropdown(product.ringSizes) : ''}
+       ${product.type == "ring" ? dropdown(ringSizes, "Ring Size:") : ''}
+       ${product.type == "clothing" ? dropdown(clothingSizes, "Clothing Size:") : ''}
        
        <div class="add__btn-box">
        <p class="text success-message js_success-message">Success! You have added <span class="js_success-product-name"></span> to your shopping cart!</p>
@@ -67,7 +70,8 @@ v216c0,11.046,8.954,20,20,20s20-8.954,20-20V276h216c11.046,0,20-8.954,20-20C512,
        <div class="prod__text-block">
        ${description(product.description)}
          </div>
-     
+         ${product.type == "clothing" ? '<img style="width: 100%;" src="img/size_tops.png"> <img style="width: 100%;" src="img/size_bottoms.png">' : ''}
+         
      
    </div>
 </div>

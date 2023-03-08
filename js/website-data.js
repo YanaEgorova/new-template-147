@@ -1,12 +1,12 @@
-export const WEBSITE_NAME = 'website name';
-export const WEBSITE_URL = 'website url';
-export const WEBSITE_CORP = 'website corp';
-export const WEBSITE_PHONE = 'website phone';
-export const WEBSITE_EMAIL = 'website email';
-export const WEBSITE_ADDRESS = 'website address';
-export const WEBSITE_RETURN_ADDRESS = 'website return address';
-export const WEBSITE_DESCRIPTOR = 'website desc';
-export const WEBSITE_FULFILLMENT = 'FULFILLMENT NINJAS HUB INC';
+export const WEBSITE_NAME = 'Pieces Of Charm Gem Store';
+export const WEBSITE_URL = 'piecesofcharmgemstore.com';
+export const WEBSITE_CORP = 'Sage Arrow Inc';
+export const WEBSITE_PHONE = '844 926 3651';
+export const WEBSITE_EMAIL = 'support@piecesofcharmgemstore.com';
+export const WEBSITE_ADDRESS = '9 Camp Bal Place, Little Falls, NJ 07424, USA';
+export const WEBSITE_RETURN_ADDRESS = '1025 Industry Rd Harrodsburg, KY 40330, USA';
+export const WEBSITE_DESCRIPTOR = '8449263651piecesofchar';
+export const WEBSITE_FULFILLMENT = 'Fulfill Brokerage Inc.';
 
 let websiteName = document.querySelectorAll('.js_website-name');
 let websiteUrl = document.querySelectorAll('.js_website-url');
@@ -18,10 +18,11 @@ let websiteReturnAddress = document.querySelectorAll('.js_website-return-address
 let websiteDescriptor = document.querySelectorAll('.js_website-desc');
 let websiteFulfillment = document.querySelectorAll('.js_website-fulfill');
 
+
 const mainPageTitle = document.querySelector('.js_main-title');
 const mainPageSubTitle = document.querySelector('.js_sub-title');
-const MAIN_TAGLINE = 'Shopping can never be boring';
-const SECONDARY_TAGLINE = 'We provide the best gadgets!';
+const MAIN_TAGLINE = 'Must have it? We’ve got it.';
+const SECONDARY_TAGLINE = 'Online shopping is the best way to buy jewelry you need in two clicks.';
 if(mainPageTitle) {
     mainPageTitle.textContent = MAIN_TAGLINE;
 }

@@ -4,7 +4,7 @@ export const localStorage = (id, count) => {
     let cart = window.localStorage.getItem('cart');
     // DEV
     var taskStatus
-    if(actualProduct.isItRing){
+    if(actualProduct.type == "ring"){
         if(document.querySelector(".prod__select").value == "Select"){
             document.querySelector(".prod__select").focus()
             taskStatus = false
@@ -12,6 +12,15 @@ export const localStorage = (id, count) => {
         } else {
             taskStatus = true
             actualProduct.ringSize = document.querySelector(".prod__select").value
+        }
+    }else if(actualProduct.type == "clothing"){
+        if(document.querySelector(".prod__select").value == "Select"){
+            document.querySelector(".prod__select").focus()
+            taskStatus = false
+            alert("Select your clothing size")
+        } else {
+            taskStatus = true
+            actualProduct.clothingSize = document.querySelector(".prod__select").value
         }
     }
     if(taskStatus == false){
@@ -22,8 +31,10 @@ export const localStorage = (id, count) => {
         cart = JSON.parse(cart);
     // DEV
         var isFindProduct
-        if(actualProduct.isItRing){
+        if(actualProduct.type == "ring"){
             isFindProduct = cart.some(product => product.id === id && product.ringSize == actualProduct.ringSize);
+        }else if(actualProduct.type == "clothing"){
+            isFindProduct = cart.some(product => product.id === id && product.clothingSize == actualProduct.clothingSize);
         } else {
             isFindProduct = cart.some(product => product.id === id);
         }
