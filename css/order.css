@@ -225,8 +225,9 @@ select:-webkit-autofill {
         margin-bottom: 0;
         margin-right: 5rem;
     }
-    .accept__list {
+    /* .accept__list {
         flex-grow: 1;
         max-width: 33rem;
-    }
+    } */
+    .accept__item:not(:last-child) { margin-right: 1.5rem; }
 }
