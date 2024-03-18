@@ -191,10 +191,30 @@ function removeError(event) {
 }
 
 function checkFilledFields(event) {
+  var checkboxInput = document.querySelector(".checkbox-input:checked")
+    
+  if(checkboxInput == null){
+      event.preventDefault()
+      alert("You must accept terms and conditions to proceed with your purchase.")
+      return
+  }
   allFields.forEach(field => {
-      if(field.nodeName === 'SELECT' && field.selectedIndex === 0) {
+      
+    if (field.nodeName === 'SELECT' && field.selectedIndex === 0) {
+      if (field.closest('.js-shipping-address-unique') && field.closest('.js-invisible-shipping-address')) {
+        return;
+      }
           setError(field);
           return false;
+      } else if (field.closest('.js-shipping-address-unique')) {
+        if (field.closest('.js-invisible-shipping-address')) {
+        return;
+        } else if (field.value.trim().length === 0) {
+           setError(field);
+        }
+          
+       
+        
       } else if (field.value.trim().length === 0) {
         console.log('set error');
         setError(field);

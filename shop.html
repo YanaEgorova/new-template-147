@@ -114,12 +114,12 @@
                 <a href="./index.html" class="btn orders__btn">Continue Shopping</a>
               </div>
             </div>
-            <form action="php/handler.php" class="form js_form" method="POST" novalidate>
-              <input type="text" hidden name="action" id="action" value="checkout">
-              <input type="text" hidden name="management" id="management" value="nxg">
-              <input type="text" hidden name="country" value="US">
-              <input type="text" hidden name="total" id="totalField" value="">
-              <input type="text" hidden name="cart" id="cartField" value="">
+             <form action="php/handler.php" class="form js_form" method="POST" novalidate="">
+              <input type="text" hidden="" name="action" id="action" value="checkout">
+              <input type="text" hidden="" name="management" id="management" value="nxg">
+              <input type="text" hidden="" name="country" value="US">
+              <input type="text" hidden="" name="total" id="totalField" value="">
+              <input type="text" hidden="" name="cart" id="cartField" value="">
               <div class="inputs-box">
               <label class="label js_label">
                 <input type="text" class="input js_input" data-role="required" name="first_name" placeholder="First Name">
@@ -129,7 +129,50 @@
                 <input type="text" class="input js_input" data-role="required" name="last_name" placeholder="Last Name">
               </label>
             </div>
+
             <div class="inputs-box">
+              <label class="label js_label">
+                <input type="number" class="input js_input js_input-limit" data-limit="10" data-role="phone" name="phone" placeholder="Phone Number">
+              </label>
+              
+              <label class="label js_label">
+                <input type="email" class="input js_input" data-role="email" name="email" placeholder="Email Address">
+              </label>
+              </div>
+            
+
+            <label class="form-check-label billing-label address-label">
+              Billing address
+            </label>
+
+            <div class="form-check address-confirmation">
+              <input class="form-check-input" type="checkbox" value="" id="toggleCheckbox" checked="" onchange="toggleAddress()">
+              <label class="form-check-label confirm-label" for="flexCheckDefault">
+                Use billing address as shipping address
+              </label>
+            </div>
+            <style>
+              .address-confirmation {
+                margin: 3rem;
+                margin-left: 1rem;
+                text-align: left;
+              }
+
+              .confirm-label {
+                font-size: 2rem;
+              }
+
+              .address-label {
+                display: block;
+                font-size: 2rem;
+                margin: 3rem;
+                margin-left: 1rem;
+                text-align: left;
+                font-weight: bold;
+              }
+            </style>
+
+            <div class="inputs-box billing-address">
               <label class="label js_label">
                 <input type="text" class="input js_input" data-role="address" name="address" placeholder="Address">
               </label>
@@ -197,10 +240,88 @@
               </label>
               
               <label class="label js_label">
-                <input type="number" class="input js_input js_input-limit"  data-limit="5" data-role="zip" name="zip" placeholder="Zip Code">
+                <input type="number" class="input js_input js_input-limit" data-limit="5" data-role="zip" name="zip" placeholder="Zip Code">
+              </label>
+            </div>
+
+
+            <label class="form-check-label shipping-label address-label" style="display: none;">
+              Shipping address
+            </label>
+
+            <div class="inputs-box shipping-address js-shipping-address-unique" style="display: none;">
+              <label class="label js_label">
+                <input type="text" class="input js_input" data-role="address" name="address" placeholder="Address">
+              </label>
+              
+              <label class="label js_label">
+                <input type="text" class="input js_input" data-role="city" name="city" placeholder="City">
               </label>
               </div>
-              <div class="inputs-box">
+              <div class="inputs-box  shipping-address js-shipping-address-unique" style="display: none;">
+              <label class="label select-label js_label">
+                <select name="state" class="select js_select js_input">
+                  <option selected="" disabled="">Select State</option>
+                  <option value="AL">Alabama</option>
+                  <option value="AK">Alaska</option>
+                  <option value="AZ">Arizona</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="CA">California</option>
+                  <option value="CO">Colorado</option>
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="DC">District Of Columbia</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="HI">Hawaii</option>
+                  <option value="ID">Idaho</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IN">Indiana</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NV">Nevada</option>
+                  <option value="NH">New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="OH">Ohio</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="OR">Oregon</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="TX">Texas</option>
+                  <option value="UT">Utah</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WA">Washington</option>
+                  <option value="WV">West Virginia</option>
+                  <option value="WI">Wisconsin</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </label>
+              
+              <label class="label js_label">
+                <input type="number" class="input js_input js_input-limit" data-limit="5" data-role="zip" name="zip" placeholder="Zip Code">
+              </label>
+            </div>
+
+              <!-- <div class="inputs-box">
               <label class="label js_label">
                 <input type="number" class="input js_input js_input-limit" data-limit="10" data-role="phone" name="phone" placeholder="Phone Number">
               </label>
@@ -208,7 +329,7 @@
               <label class="label js_label">
                 <input type="email" class="input js_input" data-role="email" name="email" placeholder="Email Address">
               </label>
-              </div>
+              </div> -->
               <div class="accept__box">
                 <p class="text">We accept:</p>
                 <ul class="accept__list">
@@ -239,23 +360,22 @@
 
 
               <label class="label js_label">
-                <input type="number" class="input js_input js_input-limit"  data-limit="3" data-role="cvv" name="cvv" placeholder="CVC">
+                <input type="number" class="input js_input js_input-limit" data-limit="3" data-role="cvv" name="cvv" placeholder="CVC">
               </label>
             </div>
 
             <div>
               <input type="checkbox" class="input checkbox-input" id="checkbox">
               <label for="checkbox" class="label checkbox-label">
-                This is a one time sale. By placing an order with us, you agree to our full <a href="./purchase.html" class="link">Terms And Conditions</a> & 
+                This is a one time sale. By placing an order with us, you agree to our full <a href="./purchase.html" class="link">Terms And Conditions</a> &amp; 
                 <a href="./privacy.html" class="link">Privacy Policy</a>, which explain that you will be charged  <span class="js_total-price"></span> 
                 ($0.00 shipping and handling costs. Your order will be shipped in 3-5 days via USPS). To cancel your order, please call our Customer Service toll free number at 
-                <a href="" class="link js_website-phone"></a> or email us at <a href="" class="link js_website-email"></a>. You will see a charge from 
-                <span class="js_website-desc"></span> on your bank statement. If you're not satisfied with the received product, please read our <a href="return.html" class="link">Return Policy</a>.
+                <a href="tel:844 570 0239" class="link js_website-phone">844 570 0239</a> or email us at <a href="mailto:support@SewingCraftHub.com" class="link js_website-email">support@SewingCraftHub.com</a>. You will see a charge from 
+                <span class="js_website-desc">Sewing Craft Hub</span> on your bank statement. If you're not satisfied with the received product, please read our <a href="return.html" class="link">Return Policy</a>.
               </label>
             </div>
-        
-                
-              
+            
+           
               <button type="submit" class="btn js_form-submit-btn">Checkout</button>
              
           </form>
@@ -332,6 +452,22 @@
   <script type="module" src="./js/on-load.js"></script>
   <script type="module" src="./js/website-data.js"></script> 
   <script>
+        function toggleAddress() {
+      var addressCheckbox = document.querySelector("#toggleCheckbox:checked")
+    
+      if(addressCheckbox == null){
+          $(".shipping-label").css("display", "block")
+          $(".shipping-address").css("display", "flex")
+          $(".shipping-address .js_error-span").css("display", "none")
+          $(".shipping-address").removeClass("js-invisible-shipping-address");
+      } else {
+        $(".shipping-label").css("display", "none")
+        $(".shipping-address").css("display", "none")
+        $(".shipping-address").addClass("js-invisible-shipping-address");
+      }
+    }
+
+    toggleAddress()
     const menuBtn = document.querySelector('.js_menu-btn');
     const menu = document.querySelector('.js_menu');
     menuBtn.addEventListener('click', () => {
